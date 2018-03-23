@@ -30,8 +30,7 @@ public class FilaTest {
 	 */
 	@Test
 	public void testEstaVaziaSucesso1() {
-		//passou
-		assertTrue(fila1.estaVazia());
+		assertTrue(fila1.estaVazia()); //Sucesso
 	}
 	
 	/**
@@ -41,8 +40,7 @@ public class FilaTest {
 	public void testEstaVaziaSucesso2() {
 		fila1.insereNaFila("elemento");
 		fila1.removeDaFila();
-		//passou
-		assertTrue(fila1.estaVazia());
+		assertTrue(fila1.estaVazia()); //Sucesso
 	}
 	
 	/**
@@ -52,8 +50,8 @@ public class FilaTest {
 	public void testEstaVaziaSucesso3() {
 		fila1.insereNaFila("elemento");
 		fila1.limpaFila();
-		//passou
-		assertTrue(fila1.estaVazia());
+		
+		assertTrue(fila1.estaVazia()); //Sucesso
 	}
 	
 	/**
@@ -61,9 +59,8 @@ public class FilaTest {
 	 */
 	@Test
 	public void testEstaVaziaFalha() {
-		//passou
 		fila1.insereNaFila("elemento");
-		assertFalse(fila1.estaVazia());
+		assertFalse(fila1.estaVazia()); //Sucesso
 	}
 	
 	/**
@@ -72,20 +69,37 @@ public class FilaTest {
 	@Test
 	public void testEstaCheiaSucesso() {
 		fila2.insereNaFila("elemento 1");
-		
-		//teste falhou, deveria retornar verdadeiro
-		assertTrue(fila2.estaCheia());
+		assertTrue(fila2.estaCheia()); //falha,deveria retornar verdadeiro 
 	}
 	/**
-	 * Insere um elemento na fila e verifica se ele está na fila
+	 * Insere um elemento na fila e verifica se ele está na fila, removendo-o
+	 * e verificando se é o objeto inserido
 	 */
 	@Test
-	public void testInsereNaFilaSucesso() {
+	public void testInsereERemoveNaFilaSucesso() {
 		fila1.insereNaFila("oi");
+		Object elemento1 = fila1.removeDaFila();
+		assertTrue(elemento1.toString().equals("oi"));	//sucesso
+	}
+	
+	/**
+	 * Verifica se estoura a capacidade da fila
+	 */
+	@Test (expected=FilaCheiaException.class)
+	public void testInserenaFilaCheia() {
+		fila2.insereNaFila(1);
+		fila2.insereNaFila(2);
+		//Falha, não lançou exceção esperada, lançou ArrayIndexOutOfBoundException
 		
-		
-		
-
+	}
+	
+	/**
+	 * Remove de uma fila vazia
+	 */
+	@Test
+	public void testRemoveDaFilaVazia() {
+		Object elemento = fila1.removeDaFila(); 
+		assertNull(elemento); //sucesso
 	}
 	
 
