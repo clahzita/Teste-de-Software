@@ -1,0 +1,8 @@
+Nome da Tarefa:
+Testes Fila
+Descrição:
+
+Envie o zip do projeto java contendo a classe de testes a classe fila e as classes auxiliares.
+Período:
+Inicia em 22/03/2018 às 00h00 e finaliza em 23/03/2018 às 23h59
+
