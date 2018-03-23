@@ -1,0 +1,24 @@
+
+Nome da Tarefa:
+Apresentacao: Teste de Software 	
+
+Descrição:
+
+Caros,
+
+como nao teremos aula presencial esta semana, inclui no sigaa um material  introdutorio sobre Teste se Software
+
+Nesta atividade vcs devem ler o material e preparar uma apresentacao (em ppt, pptx, ou pdf) abordando o conteudo do material - que deve ser enviado nesta atividade.
+
+Na semana que vem 1 ou mais destas apresentacoes serao realizadas em sala. As apresentacoes servirao de base para nossa discussao sobre teste de software.
+
+Este estilo de aula faz parte da Metodologia Ativa - que adotaremos  em algumas aulas:
+
+ http://fappes.edu.br/blog/carreira/metodologia-ativa-na-graduacao/
+
+
+Período:
+de 20/02/2018 às 00h00 a 27/02/2018 às 23h59
+
+
+

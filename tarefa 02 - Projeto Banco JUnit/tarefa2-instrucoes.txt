@@ -1,0 +1,25 @@
+
+Nome da Tarefa:
+Projeto Banco - Testes Iniciais
+
+Descrição:
+
+Nesta atividade vc deve:
+
+1. Implementar o metodo abaixio na classe Conta.java:
+
+double transferir (Conta c, double val) OperacaoIlegalException
+
+2. Criar metodos de teste JUnit para testar estes metidos.
+
+Voce encontra esta classe no zip atividade1.zip adicionado no SIGAA.
+
+Deve enviada nesta tarefa o zip do projeto Eclipse completo ou as classes que vc imlementou.
+
+ PS: LEMBRAR DE TESTAR O LANCAMENTO DA EXCECAO.
+
+
+Período:
+Inicia em 10/03/2018 às 00h00 e finaliza em 17/03/2018 às 23h59
+
+

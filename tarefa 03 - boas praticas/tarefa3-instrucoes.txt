@@ -1,0 +1,11 @@
+
+Nome da Tarefa:
+Boas Praticas
+
+Descrição:
+Ler o material JUnit best practices _ JavaWorld QUE ESTA NA TURMA VIRTUAL DO SIGAA- e enviar um arquivo cntendo um resumo das boas praticas discutidas no artigo para discutirmos em sala de aula.
+
+Período:
+Inicia em 10/03/2018 às 00h00 e finaliza em 19/03/2018 às 23h59
+
+
