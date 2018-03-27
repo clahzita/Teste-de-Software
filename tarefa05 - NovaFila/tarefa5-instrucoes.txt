@@ -1,0 +1,29 @@
+
+Nome da Tarefa:
+Nova Fila
+Descrição:
+
+PODE SER FEITA EM DUPLA: SE FOR EM DUPLA COLOCAR NOME DA DUPLA NO COMENTARIO DA TAREFA.
+
+ 
+
+1. Corrija os bugs detectados pelos testes que vc realizou para a classe Fila, a Fila corrogida deve-se chamar FilaCorrigida.java e deve implementar a interface IFila
+
+2. Insira os seguintes bugs na nova fila:
+
+- No lugar de retornar o primeiro elemento da fila o metodo removeDaFila  remove e retorna o ultimo elemento.
+
+- O metodo que insere na fila nao incrementa o tamanho da fila.
+
+Esta nova classe deve-se chamar FilaBugs.java
+
+3. Os seus testes conseguiram identificar estes bugs?
+
+4. Se nao: crie novos metodos de teste que detectem os buga injetados.
+
+--> Envie um zip contendo os codigos acima.
+
+ 
+Período:
+Inicia em 26/03/2018 às 00h00 e finaliza em 02/04/2018 às 23h59
+
