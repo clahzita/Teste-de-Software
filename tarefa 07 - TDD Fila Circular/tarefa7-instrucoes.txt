@@ -1,0 +1,15 @@
+
+Nome da Tarefa:
+TDD Fila Circular
+Descrição:
+
+Olá pessoal,
+
+nesta atividade vcs devem repetir o cliclo TDD de descomentar metodo a metodo de testes e ir implementando o codigo necessario para o teste passar. Lembrando que os testes nao podem ser alterados a nao ser nos casos sugeridos nos comentarios do proprio teste.
+
+ 
+
+ 
+Período:
+Inicia em 12/04/2018 às 00h00 e finaliza em 23/04/2018 às 23h59
+

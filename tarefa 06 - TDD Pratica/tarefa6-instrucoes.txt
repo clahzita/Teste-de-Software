@@ -1,0 +1,10 @@
+
+Nome da Tarefa:
+Test Driven Development - Pratica 
+
+Descrição:	
+Construa a classe conta seguindo a metodologia TDD como descrito na classe de testes adicionada no topico desta aula.
+
+ 
+Período:
+Inicia 06/04/2018 às 00h00 e finaliza em 10/04/2018 às 23h59

@@ -1,0 +1,18 @@
+
+Nome da Tarefa:
+Classes de equivalencia
+Descrição:
+
+Uso o criterio baseado em classes de equivalencia para criar testes para o metodo abaixo.
+
+/**Retorna o valor total a ser pago por todos os filhos*/
+
+public void double calculaMensalidade (int num_filhos, ind valor_mensalidade_indivudual)
+
+Se num_filhos for maior ou igual a 3 o valor da mensalidade de cada filho tem desconto de 50%.
+
+ 
+Período:
+Inicia em 17/04/2018 às 00h00 e finaliza em 19/04/2018 às 23h59
+
+
