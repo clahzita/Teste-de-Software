@@ -26,7 +26,7 @@ import junit.framework.TestCase;
  * - Tentar remover de uma lista vazia
  * - Tentar incluir em uma lista cheia
  *
- * O perocesso eh:
+ * O processo eh:
  * - escrever um teste de unidade que falha
  * - fazer o codigo compilar (deixe o Eclipse lhe ajudar)
  * - rodar o teste e ver ele falhar
@@ -68,6 +68,11 @@ public class CircularBufferTest extends TestCase {
 		buffer = new CircularBuffer();
 	}
 	
+	private void fillTheBuffer(int seed, int capacity) {
+		for (int i = 0; i < capacity; i++)
+			buffer.put(i + seed);
+	}
+	
 	/*
 	 * Os metodos de testes devem ser: 
 	 * 1) public 
@@ -76,34 +81,34 @@ public class CircularBufferTest extends TestCase {
 	 */
 	
 
-//	public void testShouldBeEmptyAfterCreate() {
-//		assertTrue(buffer.isEmpty());
-//	}
+	public void testShouldBeEmptyAfterCreate() {
+		assertTrue(buffer.isEmpty());
+	}
 
-//	public void testNotFullAfterCreation()
-//	{
-//		assertTrue(!buffer.isFull());
-//	}
+	public void testNotFullAfterCreation()
+	{
+		assertTrue(!buffer.isFull());
+	}
 
-//	public void testNotEmptyAfterput()
-//	{
-//		buffer.put(10046);
-//		assertTrue(!buffer.isEmpty());
-//	}
+	public void testNotEmptyAfterput()
+	{
+		buffer.put(10046);
+		assertTrue(!buffer.isEmpty());
+	}
 
-//	public void testNotEmptyThenEmpty()
-//	{
-//		buffer.put(4567);
-//		assertTrue(!buffer.isEmpty());
-//		buffer.get();
-//		assertTrue(buffer.isEmpty());
-//	}
+	public void testNotEmptyThenEmpty()
+	{
+		buffer.put(4567);
+		assertTrue(!buffer.isEmpty());
+		buffer.get();
+		assertTrue(buffer.isEmpty());
+	}
 
-//	public void testGetPutOneValue()
-//	{
-//		buffer.put(4567);
-//		assertEquals(4567, buffer.get());
-//	}
+	public void testGetPutOneValue()
+	{
+		buffer.put(4567);
+		assertEquals(4567, buffer.get());
+	}
 
 	/*
 	 * Para fazer os testes anteiores passarem voce nao precisaria de um array de inteiros.
@@ -117,15 +122,15 @@ public class CircularBufferTest extends TestCase {
 	 * 
 	 */
 	
-//	public void testGetPutAFew()
-//	{
-//		buffer.put(1);
-//		buffer.put(2);
-//		buffer.put(3);
-//		assertEquals(1, buffer.get());
-//		assertEquals(2, buffer.get());
-//		assertEquals(3, buffer.get());
-//	}
+	public void testGetPutAFew()
+	{
+		buffer.put(1);
+		buffer.put(2);
+		buffer.put(3);
+		assertEquals(1, buffer.get());
+		assertEquals(2, buffer.get());
+		assertEquals(3, buffer.get());
+	}
 
 	/*
 	 * O teste anterior lhe levou a incluir um array de tamanho fixo.
@@ -134,11 +139,11 @@ public class CircularBufferTest extends TestCase {
 	 * Por que? Simplemente porque os testes nao lhe exigiram isso.
 	 */
 
-//	public void testCapacity()
-//	{
-//		CircularBuffer buffer = new CircularBuffer(2);
-//		assertEquals(2, buffer.capacity());
-//	}
+	public void testCapacity()
+	{
+		CircularBuffer buffer = new CircularBuffer(2);
+		assertEquals(2, buffer.capacity());
+	}
 
 	/*
 	 * Voce criou um buffer interno com new. Essa eh uma boa oportunidade de fazer isso
@@ -149,13 +154,12 @@ public class CircularBufferTest extends TestCase {
 	 * 
 	 */
 
-//	public void testIsFull()
-//	{
-//		for (int i = 0; i < buffer.capacity(); i++)
-//			buffer.put(i + 100);
-//
-//		assertTrue(buffer.isFull());
-//	}
+	public void testIsFull()
+	{
+		fillTheBuffer(100, buffer.capacity());
+
+		assertTrue(buffer.isFull());
+	}
 	
 	/*
 	 * Voce incluiu um ARRAY de interios HARD CODED no seu codigo,
@@ -164,19 +168,14 @@ public class CircularBufferTest extends TestCase {
 	 * entao voce deve DELETA-LA.
 	 */
 
-//	public void testEmptyToFullToEmpty()
-//	{
-//		for (int i = 0; i < buffer.capacity(); i++)
-//		buffer.put(i + 100);
-//
-//		for (int j = 0; j < buffer.capacity(); j++)
-//		{
-//			assertEquals(j + 100, buffer.get());
-//			assertTrue(!buffer.isFull());
-//		}
-//
-//		assertTrue(buffer.isEmpty());
-//	}
+	public void testEmptyToFullToEmpty()
+	{
+		fillTheBuffer(100, buffer.capacity());
+		
+		drainAndCheck(100, buffer.capacity());
+
+		assertTrue(buffer.isEmpty());
+	}
 
 	/*
 	 * O TESTE ANTERIOR PASSOU SEM VOCE ALTERAR O CODIGO?
@@ -185,24 +184,25 @@ public class CircularBufferTest extends TestCase {
 	 * Finalmente o teste que exercita o 'dar a volta' na fila circular.
 	 */
 
-//	public void testWrapAround()
-//	{
-//		int capacity = buffer.capacity();
-//		int seed = 100;
-//		
-//		for (int i = 0; i < capacity; i++)
-//			buffer.put(i + seed);
-//
-//		assertEquals(seed, buffer.get());
-//		buffer.put(1000);
-//		assertTrue(buffer.isFull());
-//
-//		for (int i = 1; i < capacity; i++)
-//			assertEquals(i + seed, buffer.get());
-//
-//		assertEquals(1000, buffer.get());
-//		assertTrue(buffer.isEmpty());
-//	}
+	public void testWrapAround()
+	{
+		int capacity = buffer.capacity();
+		int seed = 100;
+		
+		for (int i = 0; i < capacity; i++)
+			buffer.put(i + seed);
+
+		assertEquals(seed, buffer.get());
+		buffer.put(1000);
+		assertTrue(buffer.isFull());
+
+		for (int i = 1; i < capacity; i++)
+			assertEquals(i + seed, buffer.get());
+
+		assertEquals(1000, buffer.get());
+		assertTrue(buffer.isEmpty());
+	}
+	
 
 	/*
 	 *  Ao chegar aqui voce ja deve estar chamar o metodo fill em loops (for)
@@ -226,58 +226,67 @@ public class CircularBufferTest extends TestCase {
 	 *
 	 */
 	
-//	public void testPutToFullThrows()
-//	{
-//		fillTheBuffer(900, buffer.capacity());
-//
-//		try
-//		{
-//			buffer.put(9999);
-//			fail("Put to full circularBuffer should throw");
-//		}
-//		catch (CircularBufferException e)
-//		{
-//			String expected = "Put to full circular buffer";
-//			assertEquals(expected, e.getMessage());
-//		}
-//	}
+	public void testPutToFullThrows()
+	{
+		fillTheBuffer(900, buffer.capacity());
 
-//	public void testPutToFullDoesNotDamageContents()
-//	{
-//		fillTheBuffer(900, buffer.capacity());
-//
-//		try
-//		{
-//			buffer.put(9999);
-//		}
-//		catch (CircularBufferException e)
-//		{
-//		}
-//
-//		drainAndCheck(900, buffer.capacity());
-//
-//		assertTrue(buffer.isEmpty());
-//	}
+		try
+		{
+			buffer.put(9999);
+			fail("Put to full circularBuffer should throw");
+		}
+		catch (CircularBufferException e)
+		{
+			String expected = "Put to full circular buffer";
+			assertEquals(expected, e.getMessage());
+		}
+	}
+
+	public void testPutToFullDoesNotDamageContents()
+	{
+		fillTheBuffer(900, buffer.capacity());
+
+		try
+		{
+			buffer.put(9999);
+		}
+		catch (CircularBufferException e)
+		{
+		}
+
+		drainAndCheck(900, buffer.capacity());
+
+		assertTrue(buffer.isEmpty());
+	}
+
+	private void drainAndCheck(int seed, int capacity) {
+		for (int j = 0; j < buffer.capacity(); j++)
+		{
+			assertEquals(j + seed, buffer.get());
+			assertTrue(!buffer.isFull());
+		}
+		
+	}
 
 	/*
 	 * Veja se mais algum retatoramento eh necessario
 	 *
 	 */
 
-//	public void testGetFromEmptyThrows()
-//	{
-//		try
-//		{
-//			buffer.get();
-//			fail("Get from empty should throw");
-//		}
-//		catch (CircularBufferException e)
-//		{
-//			String expected = "Get from empty circular buffer";
-//			assertEquals(expected, e.getMessage());
-//			assertTrue(buffer.isEmpty());
-//		}
-//	}
+	public void testGetFromEmptyThrows()
+	{
+		try
+		{
+			buffer.get();
+			fail("Get from empty should throw");
+		}
+		catch (CircularBufferException e)
+		{
+			String expected = "Get from empty circular buffer";
+			assertEquals(expected, e.getMessage());
+			assertTrue(buffer.isEmpty());
+		}
+	}
 
 	/*
 	 * Voce acha que esta lista de testes é suficiente para implementarmos uma fila circular?
