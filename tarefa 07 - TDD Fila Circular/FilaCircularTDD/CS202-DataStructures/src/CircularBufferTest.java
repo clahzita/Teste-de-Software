@@ -65,7 +65,7 @@ public class CircularBufferTest extends TestCase {
 	 */
 
 	protected void setUp() throws Exception {
-		buffer = new CircularBuffer();
+		buffer = new CircularBuffer(5);
 	}
 	
 	private void fillTheBuffer(int seed, int capacity) {
@@ -189,13 +189,12 @@ public class CircularBufferTest extends TestCase {
 		int capacity = buffer.capacity();
 		int seed = 100;
 		
-		for (int i = 0; i < capacity; i++)
-			buffer.put(i + seed);
+		fillTheBuffer(seed, capacity);
 
 		assertEquals(seed, buffer.get());
 		buffer.put(1000);
 		assertTrue(buffer.isFull());
-
+		
 		for (int i = 1; i < capacity; i++)
 			assertEquals(i + seed, buffer.get());
 
@@ -294,5 +293,9 @@ public class CircularBufferTest extends TestCase {
 	 * acima não exercitam.
 	 * 
 	 */
-
+	/*
+	 * Como já há teste que verifica se a fila enche dando giro e esvazia dando giro, não tive ideias sobre outro
+	 * teste a aplicar.
+	 */
+	
 }

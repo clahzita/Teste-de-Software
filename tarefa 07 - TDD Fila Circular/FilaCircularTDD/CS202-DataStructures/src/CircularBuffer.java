@@ -8,17 +8,13 @@ public class CircularBuffer {
 	private int[] circularQueue;
 
 	
-	//Perguntar a professora sobre construtor
-	public CircularBuffer() {
+	public CircularBuffer(int capacity) {
+		
 		this.front = this.rear = -1;
 		this.currentSize = 0;
-		this.capacity = MAXSIZE;
-		this.circularQueue = new int[this.capacity];
-	}
-
-	public CircularBuffer(int capacity) {
-		super();
 		this.capacity = capacity;
+		this.circularQueue = new int[this.capacity];
+		
 	}
 
 	public boolean isEmpty() {
