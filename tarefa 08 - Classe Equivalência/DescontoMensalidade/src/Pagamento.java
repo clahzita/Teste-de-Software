@@ -4,7 +4,7 @@ import exception.ValorInvalidoException;
 public class Pagamento {
 	
 	public double calculaMensalidade (int num_filhos, double valor_mensalidade_individual) throws NumeroFilhosInvalidoException, ValorInvalidoException {
-		if(num_filhos >= 0) {
+		if(num_filhos <= 0) {
 			throw new NumeroFilhosInvalidoException();
 		}
 		if(valor_mensalidade_individual < 0.0) {
