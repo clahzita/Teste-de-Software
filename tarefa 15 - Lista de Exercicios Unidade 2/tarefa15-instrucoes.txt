@@ -1,0 +1,13 @@
+﻿Nome da Tarefa:
+Lista de Exercicios
+
+Descrição:
+Envie um zip contendo as respostas as listas de excercicios:
+
+- questoes de 1 a 3 (teoricas) podem ser enviadas em txt, doc, docx ou pdf.
+
+- questoes envolvendo a criacao de testes JUnit (4 e 5) envie um zip do projeto Java contendo as respostas.
+
+Período:
+Inicia em 29/05/2018 às 00h00 e finaliza em 04/06/2018 às 23h59
+
