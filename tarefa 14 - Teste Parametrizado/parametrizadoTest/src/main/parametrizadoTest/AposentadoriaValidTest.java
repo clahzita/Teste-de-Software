@@ -12,12 +12,14 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class AposentadoriaValidTest {
 
-	@Parameters(name = "{index}: fib[{0}]={1}")
+	@Parameters(name = "{index}: deveSeAposentar[{0},{1}]")
 	public static Iterable<Object[]> data() {
-		return Arrays.asList(new Object[][] { { 61, 24, "parcial" }, { 61, 35, "integral" }, { 40, 18, "nao aposenta" },
-				{ 40, 35, "nao aposenta" }, { 60, 20, "parcial" }, { 60, 29, "parcial" }, { 55, 30, "nao aposenta" },
-				{ 55, 0, "nao aposenta" }, { 55, 19, "nao aposenta" }, { 55, 32, "nao aposenta" },
-				{ 65, 28, "parcial" }, { 65, 22, "parcial" }, { 59, -1, "nao aposenta" }, { -1, 35, "nao aposenta" }});
+		return Arrays.asList(new Object[][] { { 60, 20, "parcial" }, { 30, 10, "nao aposenta" },
+											  { 61, 21, "parcial" }, { 59, 19, "nao aposenta" },
+											  { 125, 30, "integral" },{ 65, 25, "parcial" }, 
+											  { 58, 18, "nao aposenta" }, { 124, 32, "integral" },
+											  { 65, 28, "parcial" }, { 40, 24, "nao aposenta" }, 
+											  { 40, 23, "nao aposenta" } });
 	}
 
 	private int fInputIdade;
@@ -26,7 +28,7 @@ public class AposentadoriaValidTest {
 
 	private String fExpected;
 
-	Aposentadoria consultaAposentadoria;
+	AposentadoriaInterface consultaAposentadoria;
 
 	public AposentadoriaValidTest(int inputIdade, int inputTempoContribuicao, String expected) {
 		fInputIdade = inputIdade;
@@ -37,7 +39,7 @@ public class AposentadoriaValidTest {
 	}
 
 	@Test
-	public void DeveSeAposentarTest() {
+	public void DeveSeAposentarTest() throws BusinessException {
 		assertEquals(fExpected, consultaAposentadoria.deveSeAposentar(fInputIdade, fInputTempoAposentadoria));
 	}
 
