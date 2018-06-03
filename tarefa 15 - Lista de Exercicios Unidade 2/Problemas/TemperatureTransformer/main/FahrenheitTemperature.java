@@ -1,3 +1,7 @@
+package main;
+
+import main.exception.TemperatureException;
+
 public class FahrenheitTemperature implements Temperature{  
   
     private double value;  
@@ -14,8 +18,8 @@ public class FahrenheitTemperature implements Temperature{
        return value;  
     }  
   
-    public void setValue(double value) throws Exception{  
-       if(value < ZERO) throw new Exception("N‹o h‡ temperatura abaixo do zero absoluto");  
+    public void setValue(double value) throws TemperatureException{  
+       if(value < ZERO) throw new TemperatureException("Não há temperatura abaixo do zero absoluto");  
        else this.value = value;  
     }  
   

@@ -1,3 +1,6 @@
+package main;
+
+import main.exception.TemperatureException;
 
 public class CelsiusTemperature implements Temperature{  
   
@@ -15,8 +18,8 @@ public class CelsiusTemperature implements Temperature{
        return value;  
     }  
   
-    public void setValue(double value) throws Exception{  
-       if(value < ZERO) throw new Exception("N‹o h‡ temperatura abaixo do zero absoluto");  
+    public void setValue(double value) throws TemperatureException{  
+       if(value < ZERO) throw new TemperatureException("Não há temperatura abaixo do zero absoluto");  
        else this.value = value;  
     }  
   
@@ -29,7 +32,8 @@ public class CelsiusTemperature implements Temperature{
     public String toString(){  
        return getValue()+" C";  
     }  
-  
+    
+    @Override
     public boolean equals(Object other){  
        if(other instanceof CelsiusTemperature)    
         return (((CelsiusTemperature) other).getValue() == getValue());  
